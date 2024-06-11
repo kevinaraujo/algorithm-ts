@@ -10,15 +10,15 @@ function binarySearch(list, item) {
             return middle;
         }
         if (guess > item) {
-            low = middle + 1;
+            high = middle - 1;
         }
         else {
-            low = middle - 1;
+            low = middle + 1;
         }
     }
     return -1;
 }
 var list = [1, 4, 5, 6, 20, 50, 80];
-var numero = 20;
-var res = binarySearch(list, 20);
+var numero = 80;
+var res = binarySearch(list, numero);
 console.log(res);

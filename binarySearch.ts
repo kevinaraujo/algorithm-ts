@@ -3,7 +3,7 @@ function binarySearch(list: number[], item: number): number {
     let middle;
     let guess;
     let low = 0;
-    const high = list.length - 1;
+    let high = list.length - 1;
   
   
     while(low <= high) {
@@ -14,9 +14,9 @@ function binarySearch(list: number[], item: number): number {
         return middle;
       }
       if (guess > item) {
-        low = middle + 1;
+        high = middle - 1;
       } else {
-        low = middle - 1;
+        low = middle + 1;
       }
     }
   
@@ -24,8 +24,8 @@ function binarySearch(list: number[], item: number): number {
   }
   
   const list = [1,4,5,6,20,50,80];
-  const numero = 20;
+  const numero = 80;
 
-  const res = binarySearch(list, 20);
+  const res = binarySearch(list, numero);
 
   console.log(res)
